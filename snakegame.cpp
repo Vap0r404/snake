@@ -2,6 +2,7 @@
 #include <conio.h>
 #include <cstdlib>
 #include <ctime>
+#include <windows.h> // Include this header for Sleep() function
 using namespace std;
 
 const int width = 20;
@@ -138,19 +139,13 @@ int main() {
             // Adjust speed by adding delay
             // For faster gameplay, decrease the value of sleep duration
             // For slower gameplay, increase the value of sleep duration
-            // Experiment with different values to find what suits best
             // This delay is in milliseconds
-            // You may need to include <windows.h> on Windows systems for this sleep function
-            // usleep(100000) for Unix-like systems like Linux or macOS
-            // Change the sleep function as per your system
-            // Replace sleep function with Sleep() on Windows
-            // Replace sleep function with usleep() on Unix-like systems
-            // You may also use cross-platform libraries like SDL or SFML for more control over the game loop
-            sleep(200);
+            // Use Sleep() function on Windows
+            Sleep(200);
         }
-        cout << "game over. press R to restart or any other key to exit." << endl;
+        cout << "Game over. Press 'R' to restart or any other key to exit." << endl;
         userInput = _getch();
     } while (userInput == 'R' || userInput == 'r');
-    cout << "exiting snake." << endl;
+    cout << "Exiting game." << endl;
     return 0;
 }
