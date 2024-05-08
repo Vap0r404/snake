@@ -22,6 +22,7 @@ FPS = 144  # Increase FPS for smoother movement
 MOVE_SPEED = 4.5  # Increase the speed of movement for smoother motion
 SPEED_INCREMENT = 1.005  # Speed increment factor
 DEATH_DELAY = 1  # Delay in seconds after collision with wall
+LOWER_LIMIT_TARGET_LENGTH = 20  # Lower limit for target length
 
 # Snake class
 class Snake:
@@ -147,7 +148,7 @@ def main():
     snake = Snake()
     food = Food()
     speed_multiplier = 1  # Speed multiplier to increase snake speed
-    target_length = random.randint(20, 50)  # Random target length
+    target_length = random.randint(LOWER_LIMIT_TARGET_LENGTH, 50)  # Random target length
 
     game_over = False
     win = False
@@ -194,7 +195,8 @@ def main():
                     elif event.key == pygame.K_r:
                         snake.reset()
                         speed_multiplier = 1  # Reset speed multiplier
-                        target_length = random.randint(20, 50)  # Random target length
+                        # Reset target length to lower limit when restarting the game
+                        target_length = random.randint(LOWER_LIMIT_TARGET_LENGTH, 50)  
                         game_over = False
                         win = False
 
