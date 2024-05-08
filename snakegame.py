@@ -7,7 +7,7 @@ import time
 pygame.init()
 
 # Set up the display
-WIDTH, HEIGHT = 800, 600
+WIDTH, HEIGHT = 900, 600
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("pySnake by Vap0r")
 
@@ -55,7 +55,7 @@ class Snake:
         new = (new_x, new_y)
         
         # Check if the new position collides with the walls
-        if new[0] < 0 or new[0] >= 800 or new[1] < 0 or new[1] >= 600:
+        if new[0] < 0 or new[0] >= 900 or new[1] < 0 or new[1] >= 600:
             time.sleep(DEATH_DELAY)  # Add a delay to freeze the screen
             return False  # Collision with wall, game over
         elif len(self.positions) > 2 and new in self.positions[2:]:
@@ -147,7 +147,7 @@ def main():
     snake = Snake()
     food = Food()
     speed_multiplier = 1  # Speed multiplier to increase snake speed
-    target_length = random.randint(10, 20)  # Random target length
+    target_length = random.randint(10, 50)  # Random target length
 
     game_over = False
     win = False
