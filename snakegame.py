@@ -147,7 +147,7 @@ def main():
     snake = Snake()
     food = Food()
     speed_multiplier = 1  # Speed multiplier to increase snake speed
-    target_length = random.randint(10, 50)  # Random target length
+    target_length = random.randint(20, 50)  # Random target length
 
     game_over = False
     win = False
@@ -194,7 +194,7 @@ def main():
                     elif event.key == pygame.K_r:
                         snake.reset()
                         speed_multiplier = 1  # Reset speed multiplier
-                        target_length = random.randint(10, 50)  # Random target length
+                        target_length = random.randint(20, 50)  # Random target length
                         game_over = False
                         win = False
 
